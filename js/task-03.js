@@ -15,14 +15,17 @@ const images = [
 
 const imageRef = document.querySelector('.gallery')
 imageRef.classList.add('list')
-const imageEl = [...images].map(element =>{
-  const img = document.createElement('li');
-  
-  img.insertAdjacentHTML('beforeend', `<img src = ${element.url} alt = ${element.alt} width = 400 height = 400>`)
-  return img;
-})
+const imageEl = [...images]
 
-  imageRef.append(...imageEl);
+.map(
+  (element) => 
+   `<li><img src= ${element.url} alt= ${element.alt}  width="450" height="320"/></li>`
+)
+.join("")
+
+ imageRef.insertAdjacentHTML("afterbegin", imageEl)
+  
+
 
   console.log(imageRef)
 
